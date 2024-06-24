@@ -1,8 +1,10 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main { //숫자 자릿수 계산하는 함수
+public class Main {
     public static int COUNT = 0;
+    public static ArrayList<Integer> list = new ArrayList<Integer>();
     public static int num(int n){
         int count = 0;
         while(n >= 1){
@@ -10,7 +12,8 @@ public class Main { //숫자 자릿수 계산하는 함수
             count++;
         }
         return count;
-    }
+    } //숫자 자릿수 계산하는 함수
+
     public static boolean check(int n){
         boolean found = true;
         int count = 0;
@@ -25,9 +28,6 @@ public class Main { //숫자 자릿수 계산하는 함수
                 found = false;
             }
         }
-        if(found){
-            System.out.print(Arrays.toString(arr));
-        }
         return found;
     }
     public static void main(String[] args) {
@@ -38,6 +38,7 @@ public class Main { //숫자 자릿수 계산하는 함수
                 COUNT++;
             }
         }
+        System.out.println(list);
         System.out.println(COUNT);
     }
 }
