@@ -1,3 +1,4 @@
+import javax.naming.PartialResultException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -13,23 +14,41 @@ public class Main {
         }
         return count;
     } //숫자 자릿수 계산하는 함수
+    public static int toint(int [] n){
+        int num = 0;
+        for (int nas : n) {
+            num *= 10;
+            num += nas;
+        }
+        return num;
+    }//정수배열을 정수로 만드는 함수
 
     public static boolean check(int n){
         boolean found = true;
-        int count = 0;
-        int [] arr = new int[num(n) - 1];
-        for(int i = 0; i < arr.length; i++){
-            arr[i] = n%10;
-            n/=10;
+        int thi = n;
+        if (n < 100){
+            return true;
         }
-        int dif = n%10 - (n/10)%10;
-        for(int i = 1; i <= arr.length - 1; i++) {
-            if (arr[i] - arr[i - 1] != dif) {
-                found = false;
+        else{
+            int[] arr = new int[num(n)];
+            for(int i = 0; i < arr.length; i++){
+                arr[i] = n % 10;
+                n /= 10;
             }
+            int dif = arr[1] - arr[0];
+            for(int i = 2; i < arr.length; i++) {
+                if (arr[i] - arr[i - 1] != dif) {
+                    found = false;
+                    break;
+                }
+            }
+        }
+        if (found){
+            list.add(thi);
         }
         return found;
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
