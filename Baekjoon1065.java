@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class Baekjoon1065 {
     public static int COUNT = 0;
     public static int num(int n){
         int count = 0;
