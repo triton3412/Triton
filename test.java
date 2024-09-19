@@ -4,34 +4,23 @@ import java.util.*;
 public class test {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    static boolean same(String [] ends){
+        for(int i = 0; i < ends.length; i++){
+            String target = ends[i];
+            for(int j = 0; j < ends.length; j++){
+                if(ends[j].equals(target) && i != j){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
     public static void main(String[] args)throws IOException {
-        String [] asdf = br.readLine().split(" ");
-        int size = Integer.parseInt(asdf[0]);
-        int count = Integer.parseInt(asdf[1]);
-        Map<Integer, Integer> map = new HashMap<>();
-
-
-        int last = 1;
-
-        for (int i = 1; i < count; i++) {
-            int input = Integer.parseInt(br.readLine());
-            if(!map.containsKey(input)) {
-                map.put(input, last);
-            }
-            else {
-                map.put(input, last);
-            }
-            last++;
+        String [] asdf = new String[3];
+        for(int i = 0; i < 3; i++){
+            asdf[i] = br.readLine();
         }
-        bw.newLine();
-
-        List<Integer> list = new ArrayList<>(map.values());
-        Collections.sort(list);
-
-        for(int i = 0; i < list.size(); i++) {
-            bw.write(list.get(i)+" ");
-        }
+        bw.write(String.valueOf(same(asdf)));
         bw.flush();
-
     }
 }
