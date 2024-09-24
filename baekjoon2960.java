@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class baekjoon9020 {
+public class baekjoon2960 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     public static void main(String[] args) throws IOException {
