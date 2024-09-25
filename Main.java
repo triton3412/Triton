@@ -1,10 +1,9 @@
 import java.io.*;
 
-public class test {
+public class Main {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    public static void main(String[] args)throws IOException {
-
-        bw.flush();
+    public static void main(String[] args) throws IOException {
+        String inp = br.readLine();
     }
 }
