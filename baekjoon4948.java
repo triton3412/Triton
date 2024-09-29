@@ -1,12 +1,11 @@
 import java.io.*;
 import java.util.Arrays;
 
-public class test {
+public class baekjoon4948 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    static boolean [] sosu = new boolean [250001];
     public static void main(String[] args) throws IOException {
-        boolean [] sosu = new boolean[250001];
-        int n = Integer.parseInt(br.readLine());
         Arrays.fill(sosu, true);
         sosu[1] = false;
         for(int i = 2; i <= 123456; i++){
@@ -18,13 +17,23 @@ public class test {
                 }
             }
         }
-        int count = 0;
-        for(int i = n+1; i <= 2*n; i++){
-            if(sosu[i]){
-                count++;
+
+        while(true){
+            int input = Integer.parseInt(br.readLine());
+            if(input == 0){
+                break;
+            }
+            else {
+                int count = 0;
+                for (int i = input + 1; i <= 2 * input; i++) {
+                    if (sosu[i]) {
+                        count++;
+                    }
+                }
+                bw.write(count + "\n");
+                count = 0;
             }
         }
-        bw.write(count + "\n");
         bw.flush();
     }
 }
