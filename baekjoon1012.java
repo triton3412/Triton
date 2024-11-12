@@ -45,6 +45,12 @@ public class baekjoon1012 {
                     }
                 }
             }
+            for(int i = 0; i <= n; i++){
+                for(int j = 0; j <= m; j++){
+                    bw.write(table[i][j] + " ");
+                }
+                bw.newLine();
+            }
             bw.write(count + "\n");
             count = 0;
         }
